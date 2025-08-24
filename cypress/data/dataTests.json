@@ -1,0 +1,51 @@
+{
+  "_comment1" : "***** CONSTANTS *******",
+  
+  "kWAIT": 1000,
+
+  "_comment2" : "***** PAGE CONNEXION *******",
+  
+  "urlApplication": "https://practicetestautomation.com/practice-test-login",
+  
+  "selUsername": "#username",
+  "selPassword": "#password",
+  "selBtnLogin": "#submit",
+  "selMsgErreurConnexion": "#error",
+  
+  "valUsername": "student",
+  "valPassword": "Password123",
+  "msgUsernameInvalide": "Your username is invalid!",
+  "msgPasswordInvalide": "Your password is invalid!",
+  "invalide_connexion": [
+    {"username": "student", "password": "Password$$$"},
+    {"username": "student$$$", "password": "Password123"},
+    {"username": "student$$$", "password": "Password$$$"},
+    {"username": "student", "password": ""},
+    {"username": "", "password": "Password123"},
+    {"username": "", "password": ""}
+  ],
+
+  "_comment3" : "***** PAGE ACCUEIL *******",
+
+  "selTitrePageAccueil": "h1.post-title",
+  "selSubTitrePageAccueil": "strong",
+  "selBtnLogOut": ".wp-block-button__link",
+  "selMenuHome": "#menu-item-43",
+  "selMenuPractice": "#menu-item-20",
+  
+  "valTitrePageAccueil": "Logged In Successfully",
+  "valUrlPageAccueil": "practicetestautomation.com/logged-in-successfully/",
+  "valTxtCongratulations": "Congratulations",
+  "valTxtSuccessfully": "successfully logged in!",
+
+  "_comment4" : "***** PAGE PERSONAL DETAILS *******",
+  
+  "selMnuPIMmodule": "//*[@id='menu_pim_viewPimModule']/b",
+  "selMnuEmployeeList": "//*[@id='menu_pim_viewEmployeeList']",
+  "selEmployeeName": "//*[@id='empsearch_employee_name_empName']",
+
+  "valJobTitleQAeng": "QA Engineer",
+  "valJobTitleEngineer": "Engineer",
+  "valJobTitleQaLead": "QA Lead"
+
+}
