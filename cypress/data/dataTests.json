@@ -11,7 +11,7 @@
   "selPassword": "#password",
   "selBtnLogin": "#submit",
   "selMsgErreurConnexion": "#error",
-  "temp": "temp",
+  "temp": "temp1",
   
   "valUsername": "student",
   "valPassword": "Password123",

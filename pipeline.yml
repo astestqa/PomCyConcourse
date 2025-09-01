@@ -1,0 +1,31 @@
+resources:
+  - name: repo
+    type: git
+    icon: github
+    source:
+      uri: https://github.com/astestqa/PomCyConcourse.git
+      branch: master
+
+jobs:
+  - name: pomcyconcourse
+    public: true
+    plan:
+      - get: repo
+        trigger: true
+      - task: run-cypress-tests
+        config:
+          platform: linux
+          inputs:
+            - name: repo
+          image_resource:
+            type: registry-image
+            source:
+              repository: cypress/included
+          run:
+            path: /bin/bash
+            dir: repo
+            args:
+              - -cx
+              - |
+                npm ci
+                npx cypress run --browser chrome
