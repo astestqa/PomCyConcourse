@@ -30,7 +30,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: mochawesome-html-reports
+          name: mochawesome-html
           path: |
             cypress/reports/**/*
           retention-days: 14
