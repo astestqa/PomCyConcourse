@@ -24,4 +24,32 @@ jobs:
         #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run : npm install
       - run : npx cypress run --env ENV=${{ matrix.env }}
+      
+      # Uploader les rapports de test Mochawesome HTML
+      - name: Upload Mochawesome HTML Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mochawesome-html-reports
+          path: |
+            cypress/reports/**/*
+          retention-days: 14
+
+      # Uploader les captures d'écran/vidéos en cas d'échec
+      - name: Upload Screenshots 
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots/**/*
+          retention-days: 14
+
+      - name: Upload Videos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: cypress/videos/**/*
+          retention-days: 14
+      
 
