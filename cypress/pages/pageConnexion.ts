@@ -17,7 +17,8 @@ export class PageConnexion extends PageBase {
     // Méthodes de la page de connexion
 
     visiterApplication() {
-        this.visit(D.urlApplication);
+        //this.visit(D.urlApplication);
+        this.visit(Cypress.env('baseUrl'));
     }
 
     seConnecter(Username: string, Password: string) {

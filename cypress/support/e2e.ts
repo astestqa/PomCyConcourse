@@ -15,8 +15,16 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-
 import 'cypress-mochawesome-reporter/register';
+
+before(() => {
+  const envNom = Cypress.env('ENV') || 'dev';
+  cy.log(`Environnement sélectionné : ${envNom}`);
+
+  cy.fixture(`../configs/config.${envNom}.json`).then((config) => {
+    Cypress.env('baseUrl', config.baseUrl);
+  })
+});
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   // returning false here prevents Cypress from
