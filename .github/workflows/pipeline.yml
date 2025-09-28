@@ -12,6 +12,7 @@ jobs:
     strategy:
       matrix:
         env: [qa] # [dev, qa, staging]
+        version: [1,2,3]
     steps:
       - uses: actions/checkout@v4
       #- name: Run Cypress Tests
@@ -22,7 +23,7 @@ jobs:
         #   CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run : npm install
-      - run : npx cypress run --env ENV=${{ matrix.env }}
+      - run : npx cypress run --env ENV=${{ matrix.env }} --env VERSION=${{ matrix.version }}
       
       # Uploader les rapports de test Mochawesome HTML
       - name: Upload Mochawesome HTML
